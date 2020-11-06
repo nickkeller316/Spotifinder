@@ -1,6 +1,28 @@
-Spotifinder
-
-Spotifinder is a simple application that uses HTML, Foundation CSS, and javascript to make api calls to spotify to display artists and show their top tracks. This project was a collaboration by Mike Bannoura, Nick Keller, Jon Spencer, and Riley Costello. 
-
-The user is first presented with our login page and about us section. When the user chooses to login they will be brought to spotify's login. After they have completed logging in the user will be brought to our search engine page. Then the user can input whichever artist they choose into the search bar. Then the user will be presented with results below corresponding to what the user has put into the search bar. Then the user can also view the artists top tracks.    
-
+# Spotifind
+## how to use Spotifind.
+- First the user will be presented with our login page
+- After click on login the user will be presented with a spotify login page
+- After logging in the user will be redirected to the search page
+- Then the user can search for an artist
+- After the user has searched an artist the page will display:
+    - Artist image
+    - Artist name
+    - Genres
+    - And a show songs button
+- After a user has an artist and clicks the show songs button 
+- Then the page will display randomly display one of the artists top songs
+## Purpose of the application.
+To show Artist information from spotify
+### built with
+- HTML
+- CSS
+- JavaScript
+**deployed application link**
+https://nickkeller316.github.io/Spotifinder/
+**GitHub application link** 
+https://github.com/nickkeller316/Spotifinder
+##### Screenshots.
+<img width=“600” src=“Screenshots/Screen1.png” alt=“1st screenshot”> <br>
+<img width=“600” src=“Screenshots/Screen2.png” alt=“1st screenshot”> <br>
+<img width=“600” src=“Screenshots/Screen3.png” alt=“1st screenshot”> <br>
+<img width=“600” src=“Screenshots/Screen4.png” alt=“1st screenshot”> 
