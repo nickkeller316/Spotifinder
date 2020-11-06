@@ -33,7 +33,7 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
     mainBlocks.append(divFirst)
     div2nd = $("<div class='  small-12 medium-12 columns about-people'>")
     divFirst.append(div2nd)
-    var div3rd = $("<div class='firstbox avatar-image2 small-3 medium-3'>")
+    var div3rd = $("<div class='firstbox avatar-image2 small-2 medium-2'>")
     div2nd.append(div3rd)
     var imgDiv = "";
      if (data.artists.items[i].images[1].url) {
@@ -42,19 +42,11 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
     div3rd.append('<img class="imgBox" src=' + imgDiv + '><br/>');
 
 
-    var artistName2 = ("<h3 class=' secondbox avatar-image2 small-3 medium-3'> Name: <br/>" +data.artists.items[i].name+ "</h2>");
+    var artistName2 = ("<h3 class=' secondbox avatar-image2 small-4 medium-4'> Name: <br/>" +data.artists.items[i].name+ "</h3>");
      div2nd.append(artistName2);
 
-  //     var genI = data.artists.items[i].genres
-  //     var genresN = "";
-  //     console.log(genI.toString().replace(',','<br>'))
-  //     for (var i = 0; i < genI.length; i++) {
-  //       genresN = genresN+
-  //       genI[i].toString().replace(',','<br></br>')
-        
-  //     }
-  //  console.log(genresN)
-     var genI = ("<p class='genres2 small-3 medium-3'>"  + data.artists.items[i].genres +"</p>");
+
+     var genI = (`<p id=${data.artists.items[i].id} class="genres2 small-4 medium-4">  ${data.artists.items[i].genres} </p>`);
      div2nd.append(genI);
      
 
@@ -67,22 +59,31 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
 } 
 })
 }
-
+var count = 0;
 
 function showSongs(artistId) {
-  // console.log(token)
-$(".genres2").addClass("hide")
+ console.log(artistId)
+  var boxToUpdate = document.getElementById(artistId);
+ 
+// $(".genres2").addClass("hide")
 fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=us`, {headers:{"Authorization": token, "Accept": "application/json"} }) 
   
   .then(function(response){
     return response.json();
   })
    .then(function(data){
-     console.log(data)
-     for(var i = 0; i <10; i++) {
-           var songs = ("<p class='songs small-3 medium-3'>"  + data.tracks[i].name +"</p>");
-           div2nd.append(songs);
-     }
+     count += 1;
+    //  for(var i = 0; i <10; i++) {
+            var max = data.tracks.length
+           var songs = (data.tracks[count].name);
+           if(count <= max){
+                $(`#${artistId}`).empty()
+                boxToUpdate.append(songs);
+           }
+           
+
+           
+    //  }
  
    })
 }
