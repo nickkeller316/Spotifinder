@@ -53,8 +53,8 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
         
   //     }
   //  console.log(genresN)
-  //    var genresDIv2 = ("<p class='genres2 small-3 medium-3'>"  + genresN +"</p>");
-  //    div2nd.append(genresDIv2);
+     var genI = ("<p class='genres2 small-3 medium-3'>"  + data.artists.items[i].genres +"</p>");
+     div2nd.append(genI);
 
 
      var btN = $("<button class='button primary small-2 medium-2' onclick=showSongs('" +data.artists.items[i].id+ "')>Show Songs</button>")
