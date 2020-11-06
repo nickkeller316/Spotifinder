@@ -71,7 +71,7 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
 
 function showSongs(artistId) {
   // console.log(token)
-// $(".avatar-image2").addClass("hide")
+$(".genres2").addClass("hide")
 fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=us`, {headers:{"Authorization": token, "Accept": "application/json"} }) 
   
   .then(function(response){
@@ -80,7 +80,8 @@ fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=us`, {he
    .then(function(data){
      console.log(data)
      for(var i = 0; i <10; i++) {
-           console.log(data.tracks[i].name);
+           var songs = ("<p class='songs small-3 medium-3'>"  + data.tracks[i].name +"</p>");
+           div2nd.append(songs);
      }
  
    })
