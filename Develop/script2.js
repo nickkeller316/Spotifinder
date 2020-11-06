@@ -5,7 +5,7 @@
 var equal = location.href.indexOf("=")
 var amp = location.href.indexOf("&")
 var token = "Bearer " + location.href.substring(equal +1, amp)
-
+var div2nd = $("<div class='  small-12 medium-12 columns about-people'>")
 
  
 
@@ -31,7 +31,7 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
     var mainBlocks = $(".mainblocks");
     var divFirst = $("<div class=' row add-people-section'>");
     mainBlocks.append(divFirst)
-    var div2nd = $("<div class='  small-12 medium-12 columns about-people'>")
+    div2nd = $("<div class='  small-12 medium-12 columns about-people'>")
     divFirst.append(div2nd)
     var div3rd = $("<div class='firstbox avatar-image2 small-3 medium-3'>")
     div2nd.append(div3rd)
