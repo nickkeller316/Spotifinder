@@ -1,0 +1,91 @@
+.top-bar {
+  background-color: black;
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+}
+.top-bar-left {
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.callout-large {
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 50px;
+}
+h1 {
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+h2 {
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h3 {
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.medium-6-columns--medium-pull-6 {
+  padding-bottom: 50px;
+}
+
+a {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 300px;
+}
+
+img {
+  background-color: white;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+#text-2 {
+  padding-top: 150px;
+}
+
+h2 {
+  color: white;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+p {
+  color: black;
+  font-family: ‘Courier New’, Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 23px;
+  background-color: white;
+  padding: 20px;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
