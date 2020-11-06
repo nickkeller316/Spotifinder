@@ -118,17 +118,41 @@
 }
 /* we start styling here */
 img {
-  width: 200px;
-  height: 200px
- 
+  width: 100px;
+  height: 100px;
 }
-.firstbox{
-  height: 50px
-  
+.firstbox {
+  height: 50px;
 }
 .secondbox {
-   border: solid black 5px ;
 }
 .hide {
   display: none;
+}
+.genres2 {
+  padding-right: 15px;
+}
+.h-one {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 75px;
+  text-shadow: 0 0 3px #0000ff, 0 0 5px #0000FF;
+}
+body{
+ background: black;
+}
+.header2 {
+  color: white;
+}
+.callout.primary {
+  background-color: #0000FF;
+}
+.button {
+  border-radius: 15px;
+}
+.imgBox {
+  border-radius: 15px;
+  border: 5px #0000FF solid;
 }
