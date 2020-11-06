@@ -134,25 +134,40 @@ img {
 }
 .h-one {
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-style: oblique;
   font-weight: bold;
   font-size: 75px;
-  text-shadow: 0 0 3px #0000ff, 0 0 5px #0000FF;
+  text-shadow: 0 0 3px #0000ff, 0 0 5px #0000ff;
 }
-body{
- background: black;
+body {
+  background-image: url(https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .header2 {
   color: white;
 }
 .callout.primary {
-  background-color: #0000FF;
+  background-color: #0000ff;
 }
 .button {
   border-radius: 15px;
 }
 .imgBox {
   border-radius: 15px;
-  border: 5px #0000FF solid;
+  border: 5px #0000ff solid;
+}
+
+.crossed {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 45px;
+  text-shadow: 0 0 3px #0000ff, 0 0 5px #0000ff;
+  text-decoration: line-through;
 }
