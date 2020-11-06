@@ -35,9 +35,10 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
     divFirst.append(div2nd)
     var div3rd = $("<div class='firstbox avatar-image2 small-3 medium-3'>")
     div2nd.append(div3rd)
-    
-
-    var imgDiv = data.artists.items[i].images[1].url;
+    var imgDiv = "";
+     if (data.artists.items[i].images[1].url) {
+      imgDiv = data.artists.items[i].images[1].url;
+    }
     div3rd.append('<img class="imgBox" src=' + imgDiv + '><br/>');
 
 
@@ -55,7 +56,7 @@ fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers
   //  console.log(genresN)
      var genI = ("<p class='genres2 small-3 medium-3'>"  + data.artists.items[i].genres +"</p>");
      div2nd.append(genI);
-
+     
 
      var btN = $("<button class='button primary small-2 medium-2' onclick=showSongs('" +data.artists.items[i].id+ "')>Show Songs</button>")
      div2nd.append(btN)
