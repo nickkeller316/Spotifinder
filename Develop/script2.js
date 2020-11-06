@@ -7,52 +7,85 @@ var amp = location.href.indexOf("&")
 var token = "Bearer " + location.href.substring(equal +1, amp)
 
 
-
-
+ 
 
 function startNow() {
 
+$(".mainblocks").empty()
   var artKey = localStorage.getItem("user-In");
-  console.log(artKey)
-  console.log(token)
 
-  fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers:{"Authorization": token, "Accept": "application/json"} })   
+
+fetch("https://api.spotify.com/v1/search?q=" + artKey + "&type=artist", {headers:{"Authorization": token, "Accept": "application/json"} })   
+
+  
+  .then(function(response){
+   
+    return response.json();
+  })
+   .then(function(data){
+   
+  
+  for (var i = 0; i < data.artists.items.length; i++) {
+        
+    
+    var mainBlocks = $(".mainblocks");
+    var divFirst = $("<div class=' row add-people-section'>");
+    mainBlocks.append(divFirst)
+    var div2nd = $("<div class='  small-12 medium-12 columns about-people'>")
+    divFirst.append(div2nd)
+    var div3rd = $("<div class='firstbox avatar-image2 small-3 medium-3'>")
+    div2nd.append(div3rd)
+    
+
+    var imgDiv = data.artists.items[i].images[1].url;
+    div3rd.append('<img class="imgBox" src=' + imgDiv + '><br/>');
+
+
+    var artistName2 = ("<h3 class=' secondbox avatar-image2 small-3 medium-3'> Name: <br/>" +data.artists.items[i].name+ "</h2>");
+     div2nd.append(artistName2);
+
+  //     var genI = data.artists.items[i].genres
+  //     var genresN = "";
+  //     console.log(genI.toString().replace(',','<br>'))
+  //     for (var i = 0; i < genI.length; i++) {
+  //       genresN = genresN+
+  //       genI[i].toString().replace(',','<br></br>')
+        
+  //     }
+  //  console.log(genresN)
+  //    var genresDIv2 = ("<p class='genres2 small-3 medium-3'>"  + genresN +"</p>");
+  //    div2nd.append(genresDIv2);
+
+
+     var btN = $("<button class='button primary small-2 medium-2' onclick=showSongs('" +data.artists.items[i].id+ "')>Show Songs</button>")
+     div2nd.append(btN)
+
+
+    
+    
+} 
+})
+}
+
+
+function showSongs(artistId) {
+  // console.log(token)
+// $(".avatar-image2").addClass("hide")
+fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=us`, {headers:{"Authorization": token, "Accept": "application/json"} }) 
   
   .then(function(response){
     return response.json();
   })
    .then(function(data){
-  
-    for (var i = 0; i < data.artists.items.length; i++) {
-        console.log(data)
-    console.log(data.artists.items[i].images[2].url)
-    var mainBlocks = $(".mainblocks");
-    var divFirst = $("<div class='row add-people-section'>");
-    mainBlocks.append(divFirst)
-    var div2nd = $("<div class='small-12 medium-12 columns about-people'>")
-    divFirst.append(div2nd)
-    var div3rd = $("<div class='avatar-image2 small-3 medium-3'>")
-    div2nd.append(div3rd)
-
-
-    var imgDiv = data.artists.items[i].images[2].url;
-    div3rd.append('<img src=' + imgDiv + '><br/>');
-
-
-    var artistName2 = ("<h3 class='avatar-image2 small-5 medium-5'> Name: <br/>" +data.artists.items[i].name+ "</h2>");
-     div2nd.append(artistName2);
-
-      var genI = data.artists.items[i].genres
-     var genresDIv2 = ("<p class='genres2 small-4 medium-4'>"  +genI+ "</p>");
-     div2nd.append(genresDIv2);
-     
-    }
-
-
-
-} )
-
+     console.log(data)
+     for(var i = 0; i <10; i++) {
+           console.log(data.tracks[i].name);
+     }
+ 
+   })
 }
+
+
 
     $("#main-search").on('click', function(){
       
@@ -70,6 +103,10 @@ function startNow() {
       
 })
 
+
+startNow()
+
+// "https://api.spotify.com/v1/recommendations?limit=10&offset=10&market=US&seed_artists= "
 
   //
   //   localStorage.setItem("user-In", userInput); 
@@ -129,4 +166,3 @@ function startNow() {
 //   })
 //    .then(function(data){
 //      console.log(data)
-//    })
