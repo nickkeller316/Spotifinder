@@ -119,4 +119,16 @@
 /* we start styling here */
 img {
   width: 200px;
+  height: 200px
+ 
+}
+.firstbox{
+  height: 50px
+  
+}
+.secondbox {
+   border: solid black 5px ;
+}
+.hide {
+  display: none;
 }
