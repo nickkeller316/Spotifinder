@@ -157,9 +157,20 @@ body {
 .button {
   border-radius: 15px;
 }
+
+.button:hover {
+  background-color: #0000ff;
+  /*  Making button bigger on hover  */
+  transform: scale(1.1) perspective(1px);
+}
+
 .imgBox {
   border-radius: 15px;
   border: 5px #0000ff solid;
+}
+
+.imgBox:hover {
+  transform: scale(1.1) perspective(1px);
 }
 
 .crossed {

@@ -1,5 +1,6 @@
-var redirectUri = "https://nickkeller316.github.io/Spotifinder/Develop/index2.html"
-  //this is the link to our homepage
+var redirectUri =
+  "https://nickkeller316.github.io/Spotifinder/Develop/index2.html";
+//this is the link to our homepage
 var authorizationToken; //this returns in the url after login
 //var queryURL; // "https://api.spotify.com/v1/search?q=" + searchTerm + "&type=artist";
 //var searchTerm; //this is the user input
@@ -14,11 +15,9 @@ var spotifyAuthLink =
 var token;
 //on click of authentication button set the url (window.location.href = spotifyAuthLink) to the spotify auth link
 
-$("#auth").on('click', function(){
-  (window.location.href = spotifyAuthLink);
+$("#auth").on("click", function () {
+  window.location.href = spotifyAuthLink;
   token = location.hash.substr(1);
-  var bear = parseInt("Bearer "+token);
+  var bear = parseInt("Bearer " + token);
   console.log(bear);
- 
-
 });
